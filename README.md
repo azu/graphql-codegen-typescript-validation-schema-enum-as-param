@@ -1,16 +1,48 @@
 # graphql-codegen-typescript-validation-schema-enum-as-param
 
+Test repository for [graphql-codegen-typescript-validation-schema](https://github.com/Code-Hex/graphql-codegen-typescript-validation-schema/tree/main).
 
+Enum on directive argument.
+
+```graphql
+"""
+@validateString specifies constraints on an String/ID field or argument.
+"""
+directive @validateString(
+    """
+    'format' specifies that the value must match the specified format.
+    """
+    format: StringFormat
+) on INPUT_FIELD_DEFINITION | ARGUMENT_DEFINITION
+
+"""
+StringFormat represents the format of a string.
+""" # eslint-disable-next-line @graphql-eslint/no-unreachable-types
+enum StringFormat {
+    """
+    EMAIL represents the format of an email address.
+    """
+    EMAIL
+
+    """
+    IP represents the format of an IP address.
+    """
+    IP
+}
+
+# All validation directives
+input Example {
+    # string format directives
+    email: String! @validateString(format: EMAIL)
+    ip: String! @validateString(format: IP)
+}
+
+```
 
 ## Install
 
-Install with [npm](https://www.npmjs.com/package/graphql-codegen-typescript-validation-schema-enum-as-param):
-
-    npm install graphql-codegen-typescript-validation-schema-enum-as-param
-
-## Usage
-
-- [ ] Write usage instructions
+    npm ci
+    npm run codegen
 
 ## Changelog
 
