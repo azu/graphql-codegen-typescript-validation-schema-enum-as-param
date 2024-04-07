@@ -2,6 +2,8 @@
 
 Test repository for [graphql-codegen-typescript-validation-schema](https://github.com/Code-Hex/graphql-codegen-typescript-validation-schema/tree/main).
 
+- Issue: [How to handle enum on directive arguments? · Issue #611 · Code-Hex/graphql-codegen-typescript-validation-schema](https://github.com/Code-Hex/graphql-codegen-typescript-validation-schema/issues/611)
+
 Enum on directive argument.
 
 ```graphql
