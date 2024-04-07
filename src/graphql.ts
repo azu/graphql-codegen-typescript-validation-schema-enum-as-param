@@ -42,7 +42,7 @@ export const StringFormatSchema = z.enum(['EMAIL', 'IP']);
 
 export function ExampleSchema(): z.ZodObject<Properties<Example>> {
   return z.object({
-    email: z.string(),
-    ip: z.string()
+    email: z.string().email(),
+    ip: z.string().ip()
   })
 }
